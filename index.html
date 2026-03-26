@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기초 인도네시아어 7강</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #58cc02, #46b000);
+      color: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 24px rgba(70, 176, 0, 0.25);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.96;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 24px 0 14px;
+    }
+
+    .lesson-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ecfdf3;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .indo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .line {
+      font-size: 16px;
+      line-height: 1.75;
+      margin: 5px 0;
+    }
+
+    .label {
+      display: inline-block;
+      min-width: 110px;
+      color: #6b7280;
+      font-weight: 700;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .play-btn {
+      background: #58cc02;
+      color: white;
+      box-shadow: 0 4px 0 #3d8f00;
+    }
+
+    .slow-btn {
+      background: #eef2ff;
+      color: #3730a3;
+      box-shadow: 0 4px 0 #c7d2fe;
+    }
+
+    .split-wrap {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #d1d5db;
+    }
+
+    .split-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .split-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+    }
+
+    .split-label {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .role-box {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .role-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .dialog-line {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .speaker {
+      font-size: 13px;
+      font-weight: 800;
+      color: #15803d;
+      margin-bottom: 6px;
+    }
+
+    .quiz-wrap {
+      margin-top: 28px;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+    }
+
+    .progress-text {
+      font-size: 14px;
+      font-weight: 800;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #58cc02;
+      transition: width 0.3s ease;
+    }
+
+    .question {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 10px;
+    }
+
+    .answer-btn {
+      background: white;
+      color: #111827;
+      border: 2px solid #d1d5db;
+      border-radius: 16px;
+      padding: 14px 16px;
+      text-align: left;
+      box-shadow: none;
+      font-weight: 700;
+    }
+
+    .answer-btn.correct {
+      background: #ecfdf3;
+      border-color: #22c55e;
+      color: #166534;
+    }
+
+    .answer-btn.wrong {
+      background: #fef2f2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+
+    .result {
+      margin-top: 14px;
+      font-weight: 800;
+      font-size: 16px;
+      min-height: 24px;
+    }
+
+    .next-btn, .restart-btn {
+      margin-top: 14px;
+      background: #1f2937;
+      color: white;
+      box-shadow: 0 4px 0 #111827;
+    }
+
+    .tip {
+      margin-top: 18px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: #9a3412;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .indo { font-size: 24px; }
+      .question { font-size: 19px; }
+      .label { min-width: 95px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>기초 인도네시아어 7강</h1>
+      <p>4강·5강 종합 복습: 행사 안내, 초대 표현, 전도 + 초대 연결 대화 연습</p>
+    </div>
+
+    <div class="section-title">1. 핵심 단어 복습</div>
+    <div class="lesson-grid" id="wordGrid"></div>
+
+    <div class="section-title">2. 행사 안내 문장 복습</div>
+    <div class="lesson-grid" id="sentenceGrid"></div>
+
+    <div class="section-title">3. 끊어 말하기 연습</div>
+    <div class="lesson-grid" id="splitGrid"></div>
+
+    <div class="section-title">4. 짧은 실전 대화 1</div>
+    <div class="role-box" id="rolePlay1"></div>
+
+    <div class="section-title">5. 짧은 실전 대화 2</div>
+    <div class="role-box" id="rolePlay2"></div>
+
+    <div class="section-title">6. 종합 역할극</div>
+    <div class="role-box" id="rolePlay3"></div>
+
+    <div class="quiz-wrap">
+      <div class="section-title">7. 퀴즈</div>
+      <div class="quiz-card">
+        <div class="progress-text" id="progressText">1 / 6</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="question" id="questionBox"></div>
+        <div class="answers" id="answersBox"></div>
+        <div class="result" id="resultBox"></div>
+        <div id="nextArea"></div>
+      </div>
+
+      <div class="tip">
+        7강은 4강과 5강을 연결해서 말하는 연습입니다. “전도 → 초대” 흐름으로 이어서 말해보세요.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const reviewWords = [
+      { badge: "복습 단어", indo: "acara", koPron: "아짜라", zhPron: "阿查拉", meaning: "행사 / 活动" },
+      { badge: "복습 단어", indo: "gereja", koPron: "그레자", zhPron: "格雷加", meaning: "교회 / 教会" },
+      { badge: "복습 단어", indo: "tanggal", koPron: "땅갈", zhPron: "唐加尔", meaning: "날짜 / 日期" },
+      { badge: "복습 단어", indo: "hari Minggu", koPron: "하리 밍구", zhPron: "哈里 明古", meaning: "일요일 / 星期天" },
+      { badge: "복습 단어", indo: "dimulai", koPron: "디물라이", zhPron: "迪姆拉伊", meaning: "시작되다 / 开始" },
+      { badge: "복습 단어", indo: "keluarga", koPron: "끌루아르가", zhPron: "克卢阿尔加", meaning: "가족 / 家人" },
+      { badge: "복습 단어", indo: "teman", koPron: "뜨만", zhPron: "特曼", meaning: "친구 / 朋友" },
+      { badge: "복습 단어", indo: "dekat", koPron: "드깟", zhPron: "德卡特", meaning: "가깝다 / 靠近" },
+      { badge: "복습 단어", indo: "nasi", koPron: "나시", zhPron: "纳西", meaning: "밥 / 米饭" },
+      { badge: "복습 단어", indo: "kopi", koPron: "꼬삐", zhPron: "科皮", meaning: "커피 / 咖啡" }
+    ];
+
+    const reviewSentences = [
+      {
+        badge: "핵심 문장",
+        indo: "Kami ada acara gereja, kalau ada waktu mari ikut.",
+        koPron: "까미 아다 아짜라 그레자, 깔라우 아다 왁뚜 마리 이꿋",
+        zhPron: "卡米 阿达 阿查拉 格雷加，卡劳 阿达 瓦克图 马里 伊库特",
+        meaning: "우리 교회 행사가 있는데 시간이 되면 함께 해요 / 我们有教会活动，有时间的话一起来"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Tempatnya di sini.",
+        koPron: "뜸빳냐 디 시니",
+        zhPron: "滕帕特尼亚 迪 西尼",
+        meaning: "장소는 여기예요 / 地点在这里"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Tanggal 3 Mei, hari Minggu.",
+        koPron: "땅갈 뜨리가 메이, 하리 밍구",
+        zhPron: "唐加尔 三 梅伊，哈里 明古",
+        meaning: "5월 3일 일요일입니다 / 5月3日，星期天"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Acara dimulai pukul 09.30.",
+        koPron: "아짜라 디물라이 뿌꿀 09.30",
+        zhPron: "阿查拉 迪姆拉伊 普库尔 九点三十",
+        meaning: "행사는 9시 30분에 시작해요 / 活动9点30开始"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Boleh datang dengan keluarga atau teman.",
+        koPron: "볼레 다땅 드응안 끌루아르가 아따우 뜨만",
+        zhPron: "博勒 达当 德甘 克卢阿尔加 阿道 特曼",
+        meaning: "가족이나 친구와 함께 오셔도 됩니다 / 可以和家人或朋友一起"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Boleh minta kontak WhatsApp?",
+        koPron: "볼레 민따 콘딱 왓츠앱",
+        zhPron: "博勒 明塔 康塔克 瓦茨阿普",
+        meaning: "왓츠앱 연락처 알려주실 수 있나요 / 可以给我WhatsApp联系方式吗"
+      },
+      {
+        badge: "핵심 문장",
+        indo: "Gereja kami di Pluit, dekat Emporium.",
+        koPron: "그레자 까미 디 쁠루잇, 드깟 엠뽀리움",
+        zhPron: "格雷加 卡米 在 普鲁伊特，德卡特 恩波里翁",
+        meaning: "우리 교회는 Pluit, Emporium 근처에 있어요 / 我们教会在Pluit，靠近Emporium"
+      }
+    ];
+
+    const splitPractice = [
+      {
+        badge: "끊어 말하기",
+        indo: "Kami ada acara gereja, kalau ada waktu mari ikut.",
+        koPron: "까미 아다 아짜라 그레자, 깔라우 아다 왁뚜 마리 이꿋",
+        zhPron: "卡米 阿达 阿查拉 格雷加，卡劳 阿达 瓦克图 马里 伊库特",
+        meaning: "우리 교회 행사가 있는데 시간이 되면 함께 해요 / 我们有教会活动，有时间的话一起来",
+        parts: [
+          { text: "Kami ada acara gereja", label: "까미 아다 아짜라 그레자 / 卡米 阿达 阿查拉 格雷加" },
+          { text: "kalau ada waktu", label: "깔라우 아다 왁뚜 / 卡劳 阿达 瓦克图" },
+          { text: "mari ikut", label: "마리 이꿋 / 马里 伊库特" }
+        ]
+      },
+      {
+        badge: "끊어 말하기",
+        indo: "Kalau pagi tidak bisa, sore juga boleh.",
+        koPron: "깔라우 빠기 띠닥 비사, 소레 쥬가 볼레",
+        zhPron: "卡劳 帕吉 提达克 比萨，索雷 朱加 博勒",
+        meaning: "오전에 못 오시면 오후에도 가능합니다 / 早上不能来的话，下午也可以",
+        parts: [
+          { text: "Kalau pagi tidak bisa", label: "깔라우 빠기 띠닥 비사 / 卡劳 帕吉 提达克 比萨" },
+          { text: "sore juga boleh", label: "소레 쥬가 볼레 / 索雷 朱加 博勒" }
+        ]
+      },
+      {
+        badge: "끊어 말하기",
+        indo: "Boleh datang dengan keluarga atau teman.",
+        koPron: "볼레 다땅 드응안 끌루아르가 아따우 뜨만",
+        zhPron: "博勒 达当 德甘 克卢阿尔加 阿道 特曼",
+        meaning: "가족이나 친구와 함께 오셔도 됩니다 / 可以和家人或朋友一起",
+        parts: [
+          { text: "Boleh datang", label: "볼레 다땅 / 博勒 达当" },
+          { text: "dengan keluarga", label: "드응안 끌루아르가 / 德甘 克卢阿尔加" },
+          { text: "atau teman", label: "아따우 뜨만 / 阿道 特曼" }
+        ]
+      }
+    ];
+
+    const rolePlay1 = [
+      {
+        speaker: "A",
+        indo: "Kami ada acara gereja.",
+        koPron: "까미 아다 아짜라 그레자",
+        zhPron: "卡米 阿达 阿查拉 格雷加",
+        meaning: "우리 교회 행사가 있어요 / 我们有教会活动"
+      },
+      {
+        speaker: "A",
+        indo: "Mari ikut.",
+        koPron: "마리 이꿋",
+        zhPron: "马里 伊库特",
+        meaning: "함께 해요 / 一起来参加"
+      },
+      {
+        speaker: "A",
+        indo: "Acara dimulai pukul 09.30.",
+        koPron: "아짜라 디물라이 뿌꿀 09.30",
+        zhPron: "阿查拉 迪姆拉伊 普库尔 九点三十",
+        meaning: "9시 30분에 시작해요 / 活动9点30开始"
+      }
+    ];
+
+    const rolePlay2 = [
+      {
+        speaker: "A",
+        indo: "Tempatnya di sini.",
+        koPron: "뜸빳냐 디 시니",
+        zhPron: "滕帕特尼亚 迪 西尼",
+        meaning: "장소는 여기예요 / 地点在这里"
+      },
+      {
+        speaker: "A",
+        indo: "Boleh datang dengan keluarga.",
+        koPron: "볼레 다땅 드응안 끌루아르가",
+        zhPron: "博勒 达当 德甘 克卢阿尔加",
+        meaning: "가족과 함께 오셔도 돼요 / 可以和家人一起来"
+      },
+      {
+        speaker: "A",
+        indo: "Boleh minta kontak WhatsApp?",
+        koPron: "볼레 민따 콘딱 왓츠앱",
+        zhPron: "博勒 明塔 康塔克 瓦茨阿普",
+        meaning: "왓츠앱 연락처 알려주실 수 있나요 / 可以给我WhatsApp联系方式吗"
+      }
+    ];
+
+    const rolePlay3 = [
+      {
+        speaker: "A",
+        indo: "Permisi.",
+        koPron: "뻐르미시",
+        zhPron: "珀尔米西",
+        meaning: "실례합니다 / 打扰一下"
+      },
+      {
+        speaker: "A",
+        indo: "Kami orang Kristen.",
+        koPron: "까미 오랑 크리스텐",
+        zhPron: "卡米 欧朗 克里斯滕",
+        meaning: "저희는 그리스도인입니다 / 我们是基督徒"
+      },
+      {
+        speaker: "A",
+        indo: "Kami ingin berbagi kabar baik.",
+        koPron: "까미 인긴 버르바기 까바르 바이크",
+        zhPron: "卡米 因金 伯尔巴吉 卡巴尔 巴伊克",
+        meaning: "저희는 기쁜 소식을 나누고 싶어요 / 我们想分享好消息"
+      },
+      {
+        speaker: "A",
+        indo: "Apa agama Anda?",
+        koPron: "아빠 아가마 안다",
+        zhPron: "阿帕 阿加玛 安达",
+        meaning: "당신의 종교는 무엇인가요? / 你的宗教是什么？"
+      },
+      {
+        speaker: "A",
+        indo: "Yesus mengasihi Anda.",
+        koPron: "예수스 멍아시히 안다",
+        zhPron: "耶稣斯 孟阿西希 安达",
+        meaning: "예수님은 당신을 사랑해요 / 耶稣爱你"
+      },
+      {
+        speaker: "A",
+        indo: "Kami ada acara gereja.",
+        koPron: "까미 아다 아짜라 그레자",
+        zhPron: "卡米 阿达 阿查拉 格雷加",
+        meaning: "우리 교회 행사가 있어요 / 我们有教会活动"
+      },
+      {
+        speaker: "A",
+        indo: "Mari ikut.",
+        koPron: "마리 이꿋",
+        zhPron: "马里 伊库特",
+        meaning: "함께 해요 / 一起来参加"
+      }
+    ];
+
+    function getVoice() {
+      const voices = speechSynthesis.getVoices();
+      return voices.find(v => v.lang && v.lang.toLowerCase().startsWith("id")) ||
+             voices.find(v => v.lang && v.lang.toLowerCase().startsWith("ms")) ||
+             voices.find(v => v.lang && v.lang.toLowerCase().startsWith("en"));
+    }
+
+    function speak(text, rate = 0.9) {
+      if (!("speechSynthesis" in window)) {
+        alert("이 브라우저는 음성 재생을 지원하지 않습니다.");
+        return;
+      }
+      speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      const voice = getVoice();
+      if (voice) utter.voice = voice;
+      utter.lang = voice?.lang || "id-ID";
+      utter.rate = rate;
+      utter.pitch = 1;
+      speechSynthesis.speak(utter);
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => {};
+      window.addEventListener("load", () => {
+        speechSynthesis.getVoices();
+      });
+    }
+
+    function createNormalCards(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = data.map(item => `
+        <div class="card">
+          <div class="badge">${item.badge}</div>
+          <div class="indo">${item.indo}</div>
+          <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+          <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+          <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+          <div class="btns">
+            <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 전체 듣기</button>
+            <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function createSplitCards(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = data.map(item => `
+        <div class="card">
+          <div class="badge">${item.badge}</div>
+          <div class="indo">${item.indo}</div>
+          <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+          <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+          <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+          <div class="btns">
+            <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 전체 듣기</button>
+            <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+          </div>
+          <div class="split-wrap">
+            <div class="split-title">끊어 듣기</div>
+            ${item.parts.map(part => `
+              <div class="split-item">
+                <div class="split-label">${part.label}</div>
+                <button class="slow-btn" onclick="speak('${part.text.replace(/'/g, "\\'")}', 0.75)">🔊 ${part.text}</button>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function createRolePlay(data, targetId) {
+      const target = document.getElementById(targetId);
+      target.innerHTML = `
+        <div class="role-title">말하는 순서대로 따라해보세요</div>
+        ${data.map(item => `
+          <div class="dialog-line">
+            <div class="speaker">${item.speaker}</div>
+            <div class="indo">${item.indo}</div>
+            <div class="line"><span class="label">한글 발음</span>${item.koPron}</div>
+            <div class="line"><span class="label">中文发音</span>${item.zhPron}</div>
+            <div class="line"><span class="label">뜻</span>${item.meaning}</div>
+            <div class="btns">
+              <button class="play-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.9)">🔊 듣기</button>
+              <button class="slow-btn" onclick="speak('${item.indo.replace(/'/g, "\\'")}', 0.65)">🐢 천천히</button>
+            </div>
+          </div>
+        `).join("")}
+      `;
+    }
+
+    createNormalCards(reviewWords, "wordGrid");
+    createNormalCards(reviewSentences, "sentenceGrid");
+    createSplitCards(splitPractice, "splitGrid");
+    createRolePlay(rolePlay1, "rolePlay1");
+    createRolePlay(rolePlay2, "rolePlay2");
+    createRolePlay(rolePlay3, "rolePlay3");
+
+    const quizData = [
+      {
+        question: "acara 뜻은 무엇일까요?",
+        options: ["행사", "가족", "장소"],
+        answer: "행사"
+      },
+      {
+        question: "Boleh datang dengan keluarga 뜻은 무엇일까요?",
+        options: ["가족과 함께 오셔도 돼요", "가족이 어디에 있나요", "가족은 교회에 있어요"],
+        answer: "가족과 함께 오셔도 돼요"
+      },
+      {
+        question: "Tempatnya di sini 뜻은 무엇일까요?",
+        options: ["시간은 여기예요", "장소는 여기예요", "친구는 여기예요"],
+        answer: "장소는 여기예요"
+      },
+      {
+        question: "Mari ikut 뜻은 무엇일까요?",
+        options: ["같이 먹어요", "함께 참여해요", "집에 가요"],
+        answer: "함께 참여해요"
+      },
+      {
+        question: "dekat 뜻은 무엇일까요?",
+        options: ["멀다", "가깝다", "늦다"],
+        answer: "가깝다"
+      },
+      {
+        question: "Gereja kami di Pluit, dekat Emporium 뜻은 무엇일까요?",
+        options: ["우리 교회는 Pluit에 있고 Emporium 근처예요", "우리 교회는 한국에 있어요", "우리 교회는 오후에 시작해요"],
+        answer: "우리 교회는 Pluit에 있고 Emporium 근처예요"
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    const questionBox = document.getElementById("questionBox");
+    const answersBox = document.getElementById("answersBox");
+    const resultBox = document.getElementById("resultBox");
+    const nextArea = document.getElementById("nextArea");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+
+    function updateProgress() {
+      progressText.textContent = `${Math.min(current + 1, quizData.length)} / ${quizData.length}`;
+      progressFill.style.width = `${(current / quizData.length) * 100}%`;
+    }
+
+    function renderQuiz() {
+      if (current >= quizData.length) {
+        progressText.textContent = "완료";
+        progressFill.style.width = "100%";
+        questionBox.textContent = `퀴즈 끝! 점수는 ${score} / ${quizData.length}`;
+        answersBox.innerHTML = "";
+        resultBox.textContent = score === quizData.length ? "정말 잘했어요! 🎉" : "좋아요. 다시 하면 더 잘할 수 있어요!";
+        nextArea.innerHTML = `<button class="restart-btn" onclick="restartQuiz()">다시 하기</button>`;
+        return;
+      }
+
+      updateProgress();
+      const q = quizData[current];
+      questionBox.textContent = q.question;
+      resultBox.textContent = "";
+      nextArea.innerHTML = "";
+
+      answersBox.innerHTML = q.options.map(opt => `
+        <button class="answer-btn" onclick="checkAnswer(this, '${opt.replace(/'/g, "\\'")}')">${opt}</button>
+      `).join("");
+    }
+
+    function checkAnswer(button, selected) {
+      const q = quizData[current];
+      const buttons = document.querySelectorAll(".answer-btn");
+
+      buttons.forEach(btn => btn.disabled = true);
+      buttons.forEach(btn => {
+        if (btn.textContent === q.answer) {
+          btn.classList.add("correct");
+        }
+      });
+
+      if (selected === q.answer) {
+        score++;
+        resultBox.textContent = "정답입니다!";
+        button.classList.add("correct");
+      } else {
+        resultBox.textContent = `아쉬워요. 정답은 "${q.answer}" 입니다.`;
+        button.classList.add("wrong");
+      }
+
+      nextArea.innerHTML = `<button class="next-btn" onclick="nextQuestion()">${current === quizData.length - 1 ? "결과 보기" : "다음 문제"}</button>`;
+      progressFill.style.width = `${((current + 1) / quizData.length) * 100}%`;
+    }
+
+    function nextQuestion() {
+      current++;
+      renderQuiz();
+    }
+
+    function restartQuiz() {
+      current = 0;
+      score = 0;
+      renderQuiz();
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
